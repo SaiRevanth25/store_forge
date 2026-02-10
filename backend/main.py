@@ -9,6 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from core.database import db_manager
 
 from api.user_routes import router as user_router
+from api.store_routes import router as store_router
 
 
 import logging
@@ -61,6 +62,7 @@ def health():
 
 # Include API routers
 app.include_router(user_router, prefix="/api", tags=["users"])
+app.include_router(store_router, prefix="/api", tags=["stores"])
 
 
 

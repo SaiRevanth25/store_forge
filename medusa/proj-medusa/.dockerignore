@@ -1,0 +1,16 @@
+node_modules
+.medusa
+.git
+.gitignore
+*.log
+npm-debug.log*
+.env
+.env.*
+!.env.template
+Dockerfile
+docker-compose.yml
+.dockerignore
+README.md
+integration-tests
+coverage
+.turbo

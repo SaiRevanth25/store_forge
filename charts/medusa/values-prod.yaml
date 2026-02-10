@@ -1,0 +1,41 @@
+## Production environment configuration
+## Deploy with: helm install medusa-prod ./charts/medusa -f ./charts/medusa/values-prod.yaml -n prod
+
+namespace: prod
+
+medusa:
+  replicaCount: 3
+  
+  image:
+    tag: "1.0.0"  # Use explicit version tags in production
+  
+  env:
+    NODE_ENV: production
+    MEDUSA_WORKER_MODE: shared
+    DISABLE_MEDUSA_ADMIN: "false"
+    STORE_CORS: "https://store.example.com"
+    ADMIN_CORS: "https://admin.example.com"
+    AUTH_CORS: "https://admin.example.com"
+    MEDUSA_BACKEND_URL: "https://api.example.com"
+  
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "250m"
+    limits:
+      memory: "1Gi"
+      cpu: "1000m"
+
+database:
+  host: postgres.default.svc.cluster.local
+  password: medusa  # Use Sealed Secrets in production
+
+probes:
+  liveness:
+    enabled: true
+    initialDelaySeconds: 60
+    periodSeconds: 30
+  readiness:
+    enabled: true
+    initialDelaySeconds: 30
+    periodSeconds: 10

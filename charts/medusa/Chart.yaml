@@ -1,0 +1,21 @@
+apiVersion: v2
+name: medusa
+description: Medusa backend Helm chart for multi-namespace SaaS deployments
+type: application
+
+version: 1.0.0
+appVersion: "1.0"
+
+home: https://medusajs.com/
+sources:
+  - https://github.com/sairevanth25/store_forge
+
+keywords:
+  - medusa
+  - ecommerce
+  - backend
+  - saas
+  - kubernetes
+
+maintainers:
+  - name: Store Forge

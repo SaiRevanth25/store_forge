@@ -7,7 +7,7 @@ from core.orm import User as UserORM
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, update
 
-from backend.core.security import verify_password, get_password_hash
+from core.security import verify_password, get_password_hash
 
 
 class UserService:
