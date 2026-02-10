@@ -166,6 +166,5 @@ backend/.env
 
 *.db*
 
-
-frontend/
-medusa/my-medusa-storefront/
+frontend/node_modules/
+medusa/my-medusa-storefront/node_modules/
