@@ -14,6 +14,17 @@ my-medusa-storefront/: Medusa storefront (Next.js)
 - Customer-facing storefront
 - Product catalog
 - Shopping cart functionality
+- **Important** - Need to setup NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY in the .env from the store backend/admin
+    - Find in settings after loggin in to the admin dashboard
+    - prefering manual key setpup for multi-purpose usecases
+
+Setting up frontend for storefront
+- From the `my-medusa-storefront` directory, run
+```
+yarn install
+yarn dev
+```
+
 
 k8s/: Kubernetes manifests for deployment
 - Medusa backend deployment
